@@ -328,10 +328,12 @@
                     input["user_uuid"] = userUuid;
                     input["title"]     = "MASTER";
                     input["message"]   = "Please order the item, or it will expire for today order !";
-
+                    /*
+                    Request to API server
+                    */
                     $.ajax({
                         type    : "POST",
-                        url     : "http://192.168.178.162:8080/wegardenapi/notification/send",
+                        url     : `${baseUrl}/notification/send`,
                         data    : JSON.stringify(input),
                         headers : {
                             "Content-Type"  : "application/json;",
